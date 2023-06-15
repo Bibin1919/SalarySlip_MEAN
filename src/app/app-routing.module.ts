@@ -11,10 +11,10 @@ const routes: Routes = [
     path: '', component: HomeComponent
   },
   {
-    path: 'sladd', component: SladdComponent
+    path: '/sladd', component: SladdComponent
   },
   {
-    path: 'sltable', component: SltableComponent
+    path: '/sltable', component: SltableComponent
   },
   {
     path:'sltable/view/:_id', component: ViewComponent
