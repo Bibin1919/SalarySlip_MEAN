@@ -1,0 +1,93 @@
+<div class="container mt-2">
+    
+    <div class="d-flex justify-content-between">
+        <h4 class="fw-bold text-primary">Create Salary Slip</h4>
+        
+          <a routerLink="/sltable" class="btn btn-success mt-2 mb-2">Go Back</a>
+        
+      </div>
+    <div class="row border p-2">
+        <div class="col">
+            <form [formGroup]="addForm" (ngSubmit)="add()" class="row g-3">
+
+                <div class="col-md-3">
+                    <label for="empname" class="form-label fw-bold">Employee Name</label>
+                    <input name="empname" formControlName="empname" type="text" class="form-control" id="empname">
+                </div>
+                <div class="col-md-3">
+                    <label for="dept" class="form-label fw-bold">Department</label>
+                    <input name="dept" formControlName="dept" type="text" class="form-control" id="dept">
+                </div>
+                <div class="col-md-3">
+                    <label for="desg" class="form-label fw-bold">Designation</label>
+                    <input name="desg" formControlName="desg" type="text" class="form-control" id="desg">
+                </div>
+                <div class="col-md-3">
+                    <label for="doj" class="form-label fw-bold">Date Of Join</label>
+                    <input name="doj" formControlName="doj" type="date" class="form-control" id="doj">
+                </div>
+                <div class="container mt-3">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Earnings</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Deductions</th>
+                                <th scope="col">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Basic Pay</td>
+                                <td><input [(ngModel)]="bp" name="bp" formControlName="bp" type="number"
+                                        class="form-control" id="bp"></td>
+                                <td>Advance</td>
+                                <td><input [(ngModel)]="adv" name="adv" formControlName="adv" type="number"
+                                        class="form-control" id="adv"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td>PF</td>
+                                <td><input [(ngModel)]="pf" name="pf" formControlName="pf" type="number"
+                                        class="form-control" id="adv"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td>Labour Welfare Fund</td>
+                                <td><input [(ngModel)]="lwf" name="lwf" formControlName="lwf" type="number"
+                                        class="form-control" id="adv"></td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                </div>
+                <div class="div border border-3 p-2">
+                    <div class="row ">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4 d-flex justify-content-center align-items-center">
+                            <button type="button" (click)="calculateNetPay()" class=" btn btn-primary">Calculate</button>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                    <div class="row text-center mt-2 ">
+                        <div class="col-md-4 fw-bold">Total Earning
+                            <input [(ngModel)]="te" name="te" formControlName="te" type="number"
+                                class="form-control-plaintext text-center border" readonly id="bp">
+                        </div>
+                        <div class="col-md-4 fw-bold">Total Deductions
+                            <input [(ngModel)]="td" name="td" formControlName="td" type="number"
+                                class="form-control-plaintext text-center border" readonly id="adv">
+                        </div>
+                        <div class="col-md-4 fw-bold">Net Pay
+                            <input [(ngModel)]="np" name="np" formControlName="np" type="text"
+                                class="form-control-plaintext text-center border fw-bold" readonly>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-success me-3">Add</button>
+            </form>
+        </div>
+    </div>
+</div>

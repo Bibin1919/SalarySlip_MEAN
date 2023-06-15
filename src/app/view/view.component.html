@@ -1,0 +1,72 @@
+<div class="container mt-3 border p-4 shadow">
+  
+  <div class="d-flex justify-content-between">
+    <a class="btn btn btn-light" (click)="printPage()">Print</a>
+
+    <a routerLink="/sltable" class="btn btn-light mt-2 mb-2">Go Back</a>
+
+</div>
+    <h3 class="text-center">Salary Slip</h3>
+    <div class="row border p-3">
+        <div class="col-md-6 mt-2 ">
+            <span class="fw-bold">Employee Name : </span>{{item.empname}} <br>
+           <span class="fw-bold"> Designation : </span>{{item.desg}}
+        </div>
+        <div class="col-md-6 mt-2">
+            <span class="fw-bold"> Department / Shop : </span>{{item.dept}} <br>
+            <span class="fw-bold"> Date Of join : </span>{{item.doj}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <table class="table table-bordered mt-3">
+                <thead>
+                  <tr>
+                    <th scope="col">Earnings</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Deductions</th>
+                    <th scope="col">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Basic Pay</th>
+                    <td>{{item.bp}}</td>
+                    <td>Advance</td>
+                    <td>{{item.adv}}</td>
+                  </tr>
+                  <tr>
+                    <th colspan="2"></th>
+                    
+                    <td>PF</td>
+                    <td>{{item.pf}}</td>
+                  </tr>
+                  <tr>
+                    <th colspan="2"></th>
+                    <td >Labour Welfare Fund</td>
+                    <td>{{item.lwf}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Total Earning</th>
+                    <th scope="col">{{item.te}}</th>
+                    <th scope="col">Total Deductions</th>
+                    <th scope="col">{{item.td}}</th>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container d-flex">
+            <p class="fw-bold me-3"> Net Pay :</p> <p style="font-size: 24px; font-weight: 700;">{{item.np}} /-</p>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="container">
+           <div class="row">
+            <div class="col-md-6 mt-2"> Employer Signature ___________________________________</div>
+           <div class="col-md-6 mt-2"> Employee Signature ___________________________________</div>
+           </div>
+        </div>
+    </div>
+</div>

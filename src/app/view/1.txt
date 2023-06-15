@@ -1,0 +1,9 @@
+
+ ngOnInit(): void {
+    this.viewActivatedRoute.params.subscribe((data: any) => {
+      console.log(data);
+      this.viewId = data._id;
+    });
+  }
+
+
